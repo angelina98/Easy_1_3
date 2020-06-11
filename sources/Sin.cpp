@@ -1,18 +1,18 @@
 #include "Sin.h"
 #include <cmath>
 
-double Sinus(double j)
+double Sinus(double val)
 {
-    double e = 0.0001;
-    double r, i = j;
-    double c = j;
-    int k = 1;
-    while (abs(i) > e)
+    double eps = 0.0001;
+    double rowElement, deviation = val;
+    double sinus = val;
+    int counter = 1;
+    while (abs(deviation) > eps)
     {
-        r = - j * j / (2 * k * ( 2 * k + 1));
-        i *=r;
-        c +=i;
-        k++;
+        rowElement = - val * val / (2 * counter * (2 * counter + 1));
+        deviation *=rowElement;
+        sinus +=deviation;
+        counter++;
     }
-    return c;
+    return sinus;
 }

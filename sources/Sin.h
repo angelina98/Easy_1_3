@@ -1,4 +1,4 @@
 #pragma once
 #include <cmath>
 
-double Sinus(double j);
+double Sinus(double val);
